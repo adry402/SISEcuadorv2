@@ -1,18 +1,26 @@
 /* 
-    Document   : cabeceraSIISE
+    Document   : cabeceraTt
     Created on : 04/08/2014, 09:37:00 AM
-    Author     : MCDS
+    Author     : Adriana Romero
     Description:
-        Purpose of the stylesheet follows.
+        Hoja de estilo formato cabeceras consulta Territorial
 */
 
+
+/************************************************************************************
+ESTILO PARA EL ICONO EN LAS CABECERAS DE LAS PAGINAS DE CONSULTA TERRITORIAL
+*************************************************************************************/
+
+
+/*Para dispositivos hasta los 760 x 800 px (orientacion: landscape y portrait)*/
 #titleBar {
     background: rgba(0,28,54,0.9) url(../images/icon-tt1.png) no-repeat left !important;
-   background-position: 40px 15px !important; 
+   background-position: 42px 13px !important; 
 }
+/*Para dispositivos mayores a 1024 (orientacion: landscape y portrait)*/
 #header{
     background: rgba(0,28,54,0.9) url(../images/icon-tt2.png) no-repeat center !important;
-    background-position: 90px !important;
+    background-position: 100px !important;
 }
 
 

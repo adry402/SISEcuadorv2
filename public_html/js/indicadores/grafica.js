@@ -16,10 +16,12 @@ function ViewModelGrafica() {
     if (location.search.substr(1)) {
         Variable = location.search.substr(1);
         var elem = Variable.split('&');
-        id_ib = elem[0];
-        id_tema = elem[1];
-         id_subtema = elem[2];
+        id_tema = elem[0];
+        id_ib = elem[1];
+        id_subtema = elem[2];
     }
+
+
     /*
      * Visibilidad de los elementos html
      */
@@ -44,8 +46,8 @@ function ViewModelGrafica() {
         success: function(data) {
             ipserver = data;
 //            http://201.219.3.75:8080/SWSISEcuador/webresources/indanalisis/conPobRef/943/24
-            cadena = ipserver + "/SWSISEcuador/webresources/indanalisis/conPobRef/" + id_ib + "/" + id_tema;
-
+            cadena = ipserver + "/SWSISEcuador/webresources/indanalisis/conPobRef/" + id_ib + "/" + id_subtema;
+           
             $.getJSON(cadena, function(result) {
                 $(".loadingPag").css("display", "none");
                 $(".mapaSitio").html(result.tema_indicador);
@@ -101,20 +103,15 @@ function ViewModelGrafica() {
                                 principal.ejemploLista.push({
                                     dato1: "",
                                     dato2: result.valoresX_indicador[j],
-                                    dato3: format(datoR[j],result.numero_decimales)
+                                    dato3: format(datoR[j], result.numero_decimales)
                                 });
-                                
-                                 }
+
+                            }
                         }
 
                     }
                 }
-                /*
-                 * Se inicializa la paginación en la tabla de datos
-                 */
-
-               
-
+            
                 //Los valores que se necesitan son arrays
                 var valoresX = result.valoresX_indicador;
                 var intervalo;
@@ -123,7 +120,6 @@ function ViewModelGrafica() {
                 } else {
                     intervalo = 1;
                 }
-
 
                 /*
                  * Gráfico en HighCharts
@@ -224,11 +220,9 @@ function ViewModelGrafica() {
         return numero;
     }
     ;
-    function truncator(numToTruncate, intDecimalPlaces) {
-        var numPower = Math.pow(10, intDecimalPlaces);
-        return ~~(numToTruncate * numPower) / numPower;
-    }
-
+    
 }
 // Activamos knockout.js
 ko.applyBindings(new ViewModelGrafica());
+
+

@@ -1,56 +1,27 @@
-/* Tablet Horizontal*/
-/* Header */
+/* 
+    Document   : style-mobile
+    Created on : 04/08/2014, 09:37:00 AM
+    Author     : Adriana Romero
+    Description:
+        Hoja de estilo formato 
+        Pantallas de 1024x768 px, orientacion: portrait and landscape
+*/
+
+/************************************************************************************
+Inicializacion de los componentes
+*************************************************************************************/
 
 #content{
     margin-top:10px;
-margin-left: 20px;
-width: 95% !important;
+    margin-left: 20px;
+    width: 95% !important;
 }
 
+/************************************************************************************
+Cabeceta
+*************************************************************************************/
 
-
-#leftPanelButton .toggle {
-    text-align: left;
-    padding-left: 1px;
-    height: 100px;
-    background: rgba(0,28,54,0.2) url('images/menu.png') no-repeat;
-    background-position: 10px;
-    width: 80px;
-
-}
-.icon-myshare{
-    background:rgba(0,28,54,0.2) url(images/icon-share.png) no-repeat !important;
-    background-position: 10px !important;
-
-}
-
-.icon-mysearch{
-    background: rgba(0,28,54,0.2) url(images/icon-search.png) no-repeat  !important;
-    background-position: 10px !important;
-}
-
-#rightPanelButton .toggle {
-
-    height: 100px;
-    width: 80px;
-    padding-left: 1px;
-
-}
-
-.icon-myshare{
-
-    background-position: 25px !important;
-
-}
-
-.icon-mysearch{
-
-    background-position: 25px !important;
-}
-
-
-
-/* Title */
+/* Title: se muestra para los dispositivos diferentes de smarthphones */
 
 #title {
     padding-left: 135px;
@@ -69,103 +40,74 @@ width: 95% !important;
     margin-left:0px;
     margin-right: 0px;
     font-size:16px;
-
 }
 
-/* Nav */
+/************************************************************************************
+Paneles
+*************************************************************************************/
+/* Nav: posicion de botones de navegacion */
 
 #nav {
     position: relative;
     text-align: left;
 }
+/* Nav: margenes para los menus de navegacion */
 
 #nav a {
     margin: 0 1em 0 1em;
 }
 
-/**********************************************************/
-/*Estilo para las listas                                  */
-/**********************************************************/
+/* Overlays: botones que al pulsarlos desplazan los paneles (class .toggle) panel izquierdo */
 
-/*Listas en sectores y subsectores*/
-/*Este es el UL*/
-.listviewSector{
-    margin-top: 30px;
-    font-size:17px;
-
-}
-
-.listviewSector li a{
-
-    padding: 25px;
-}
-
- .loadingPag{
-
-        top:100px;
-        left: 400px;
-    }
-
-
-
-.tab-links li {
-    margin:0px 0px;
-    float:left;
-    list-style:none;
-    border-right: 1px solid #b0b0b0;
-    
-}
-
-#results{
-
-
-    font-size: 15px;
-}
-
-#results thead{
-
-
-    font-size: 17px;
+#leftPanelButton .toggle {
+    text-align: left;
+    padding-left: 1px;
+    height: 100px;
+    background: rgba(0,28,54,0.2) url('images/menu.png') no-repeat;
+    background-position: 10px;
+    width: 80px;
 
 }
 
+/*Icono de compartir*/
+.icon-myshare{
+    background:rgba(0,28,54,0.2) url(images/icon-share.png) no-repeat !important;
+    background-position: 10px !important;
+}
+/*Icono de busqueda*/
+.icon-mysearch{
+    background: rgba(0,28,54,0.2) url(images/icon-search.png) no-repeat  !important;
+    background-position: 10px !important;
+}
+/* Overlays: botones que al pulsarlos desplazan los paneles (class .toggle) panel derecho */
 
+#rightPanelButton .toggle {
 
-#divFuente{
-    font-size: 13px;
+    height: 100px;
+    width: 80px;
+    padding-left: 1px;
 
-    line-height:20px;
+}
+/*Icono de compartir*/
+.icon-myshare{
+
+    background-position: 25px !important;
+
+}
+/*Icono de busqueda*/
+.icon-mysearch{
+
+    background-position: 25px !important;
 }
 
-
-
-.tab-links a {
-    padding:6px 23px;
-     font-size:16px;
-
-}
-
-#miMapa{
-    width: 65%; 
-    height:350px; 
-}
-
-
-
-.infoTerritorial img{
-    width: 100%;
-    height: 4px;
-}
-
-#container1{
-    margin-bottom: 100px;
-}
-
+/*Estilo para las tablas ubicadas en el panel derecho*/
 #rightPanel table{
 
     border-collapse: separate;
     border-spacing: 20px;
 }
+/*Propiedades para los combos ubicados en el panel derecho*/
+
 #rightPanel select{
 
     font-size: 15px;
@@ -178,8 +120,82 @@ width: 95% !important;
     margin-top: 30px;
 }
 
+
+/**********************************************************/
+/*Estilo para las listas                                  */
+/**********************************************************/
+
+/*Listas en sectores*/
+/*Este es el UL*/
+.listviewSector{
+    margin-top: 30px;
+    font-size:17px;
+}
+/*Estilo para LI a (botones)*/
+.listviewSector li a{
+    padding: 25px;
+}
+
+
+
+/************************************************************************************
+Otros componentes
+*************************************************************************************/
+/* Imagen de "cargando"*/
+.loadingPag{
+
+    top:100px;
+    left: 400px;
+}
+
+/*Menu TAB: pestañas en el grafico del indicador (Grafico, Datos, Ficha)*/
 .tabs{
     margin-top: 0px;
     width: 99% !important
 }
+
+/*Estilo para los links del menu del grafico*/
+.tab-links li {
+    margin:0px 0px;
+    float:left;
+    list-style:none;
+    border-right: 1px solid #b0b0b0;
+}
+/*Estilo para los botones en el menu grafico*/
+.tab-links a {
+    padding:6px 23px;
+    font-size:16px;
+}
+
+/*Estilo para la tabla donde se mostraran los datos*/
+#results{
+    font-size: 15px;
+}
+/*Estilo para la tabla donde se mostraran los datos: cabecera*/
+#results thead{
+    font-size: 17px;
+}
+
+/*Div que contiene la fuente y el año de la grafica*/
+
+#divFuente{
+    font-size: 13px;
+
+    line-height:20px;
+}
+
+/*Div que contiene el mapa en las consultas territoriales*/
+
+#miMapa{
+    width: 65%; 
+    height:350px; 
+}
+/* Divs que contienen las graficas mostradas en la consulta territorial*/
+
+#container1{
+    margin-bottom: 100px;
+}
+
+
+
 

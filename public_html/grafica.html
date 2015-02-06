@@ -11,138 +11,137 @@
         <script src="js/tabsgrafica.js"></script>
         <script src="js/panel/skel.min.js"></script>
         <script src="js/panel/skel-panels.min.js"></script>
-        <link rel="stylesheet" href="css/cabeceras/cabeceraSIISE.css">
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <script src="js/share.js"></script>
-        
-</head>
-<body>
-   
 
-    <div class="container">
-        <!-- Cabecera -->
-        <div id="header">
-           <div id="title">
+        <script src="js/share.js"></script>
+
+    </head>
+    <body>
+
+
+        <div class="container">
+            <!-- Cabecera -->
+            <div id="header">
+                <div id="title">
                     <div class="titulo-general">Indicadores sociales</div>                     
                     <div class="mapaSitio"></div>
                 </div>
-        </div>
+            </div>
 
-        <!-- Cuerpo -->
-        <div class="row">
-            <!-- Barra izquierda -->
-            <section class="3u" id="left-sidebar">
-                 <nav id="nav">
-                        <a  href="index.html" >Inicio</a>
-                        <a  href="sector.html?1" >Indicadores sociales</a>
-                        <a  href="cnsT1.html" >Indicadores territoriales</a>
-                        <a  href="relvSector.html?2" >Indicadores relevantes</a>
-                        <a  href="agnSse.html?4" >Agenda social</a>
+            <!-- Cuerpo -->
+            <div class="row">
+                <!-- Barra izquierda -->
+                <section class="3u" id="left-sidebar">
+                    <nav id="nav">
+
                     </nav>
-            </section>
-            <!-- Contenido -->
+                </section>
+                <!-- Contenido -->
 
-            <section class="9u" id="content">
+                <section class="9u" id="content">
 
-                <div class="tabs">
-                    <ul class="tab-links">
-                        <li class="active"><a href="#tab1">Gráfica</a></li>
-                        <li><a href="#tab2">Datos</a></li>
-                        <li><a href="#tab3">Ficha</a></li>
-                    </ul> 
-                    <div class="tab-content">
-                        <div id="tab1" class="tab active">
-                            <div  class="errorGrafico" >
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li class="active"><a href="#tab1">Gráfica</a></li>
+                            <li><a href="#tab2">Datos</a></li>
+                            <li><a href="#tab3">Ficha</a></li>
+                        </ul> 
+                        <div class="tab-content">
+                            <div id="tab1" class="tab active">
+                                <div  class="errorGrafico" >
+                                </div>
+                                <div class ="loadingPag" >
+                                    <div class="absoluta">Espere un momento</div>
+                                </div>
+                                <div id="container">
+
+                                </div>
+
+                                <script src="js/highcharts/highcharts.js"></script>
+                                <div id="divFuente">
+                                    <span>Fuente: <label class="lblFuente"> </label> </span>
+                                    <br>
+                                    <span>Año: <label class="lblAnio"> </label> </span>
+                                </div>
+                                <br><br>
                             </div>
-                            <div class ="loadingPag" >
-                                <div class="absoluta">Espere un momento</div>
-                            </div>
-                            <div id="container">
 
-                            </div>
+                            <div id="tab2" class="tab">
+                                <div class="nombreIndicador"></div>
+                                <div id="divFuente">
+                                    <span>Fuente: <label class="lblFuente"> </label> </span>
+                                    <br>
+                                    <span>Año: <label class="lblAnio"> </label> </span>
+                                </div>
+                                <div class ="loadingPag" >
+                                    <div class="absoluta">Espere un momento</div>
+                                </div>
 
-                            <script src="js/highcharts/highcharts.js"></script>
-                            <div id="divFuente">
-                                <span>Fuente: <label class="lblFuente"> </label> </span>
+                                <table id="results">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Desglose
+                                            </th>
+                                            <th>
+                                                Año
+                                            </th>
+                                            <th>
+                                                Datos(<span id="labelTool"></span>)   
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: ejemploLista">
+                                        <tr>
+                                            <td  data-bind="text: dato1" class="estiloColumnas">
+                                                Aqui va el anio
+                                            </td>
+                                            <td data-bind="text: dato2" class="estiloColumnas">
+                                                Aqui va el dato
+                                            </td>
+                                            <td data-bind="text: dato3" class="estiloColumnas">
+                                                Aqui va el dato
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <br>
-                                <span>Año: <label class="lblAnio"> </label> </span>
-                            </div>
-                            <br><br>
-                        </div>
-
-                        <div id="tab2" class="tab">
-                            <div class="nombreIndicador"></div>
-                             <div id="divFuente">
-                                <span>Fuente: <label class="lblFuente"> </label> </span>
                                 <br>
-                                <span>Año: <label class="lblAnio"> </label> </span>
                             </div>
-                            <div class ="loadingPag" >
-                                <div class="absoluta">Espere un momento</div>
+
+                            <div id="tab3" class="tab">
+                                <div class="nombreIndicador"></div>
+                                <div class ="loadingPag" >
+                                    <div class="absoluta">Espere un momento</div>
+                                </div>
+                                <br>
+                                <span id="definicion">Definición</span>
+                                <br>
+                                <section id="ficha"></section>
+                                <br>
+                                <table class="link">
+                                    <tbody data-bind="foreach: fichaList">
+                                        <tr>
+                                            <td>
+                                                <a  data-bind="attr: { href: url, title: details }, text: textoBoton"></a>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <br>
+                                <br>
                             </div>
-                          
-                            <table id="results">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Desglose
-                                        </th>
-                                        <th>
-                                            Año
-                                        </th>
-                                        <th>
-                                            Datos(<span id="labelTool"></span>)   
-                                    </tr>
-                                </thead>
-                                <tbody data-bind="foreach: ejemploLista">
-                                    <tr>
-                                        <td  data-bind="text: dato1" class="estiloColumnas">
-                                            Aqui va el anio
-                                        </td>
-                                        <td data-bind="text: dato2" class="estiloColumnas">
-                                            Aqui va el dato
-                                        </td>
-                                        <td data-bind="text: dato3" class="estiloColumnas">
-                                            Aqui va el dato
-                                        </td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                            <br>
-                        </div>
-
-                        <div id="tab3" class="tab">
-                            <div class="nombreIndicador"></div>
-                            <div class ="loadingPag" >
-                                <div class="absoluta">Espere un momento</div>
-                            </div>
-                            <br>
-                            <span id="definicion">Definición</span>
-                            <br>
-                            <section id="ficha"></section>
-                            <br>
-                            <table class="link">
-                                <tbody data-bind="foreach: fichaList">
-                                    <tr>
-                                        <td>
-                                            <a  data-bind="attr: { href: url, title: details }, text: textoBoton"></a>
-
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                            <br>
-                            <br>
                         </div>
                     </div>
-                </div>
-                <script src="js/formatos/grafica.js"></script>
-            </section>
-            <!-- Barra derecha -->
-            <section class="3u" id="right-sidebar">
+
+                    <script src="js/indicadores/grafica.js"></script>
+                    <script src="js/cabeceras.js"></script>
+                    <script src="js/navegadorPI.js"></script>
+                </section>
+
+                <!-- Barra derecha -->
+                <section class="3u" id="right-sidebar">
                     <div id="labelShare">Compartir</div> 
                     <nav id="share">
                         <a class="email button-wrap" href="#" ><span>E-mail</span></a>
@@ -153,7 +152,7 @@
                     </nav> 
                 </section>
 
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

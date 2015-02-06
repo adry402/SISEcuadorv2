@@ -1,4 +1,11 @@
+/* 
+ * Javascript confFicha
+ * Presenta la ficha metodologica
+ * autor: @Adriana.Romero
+ * Puglin libreria skel,js
+ */
 
+/*En breakpoints se liga a la hoja de estilos los paneles segun sus tamaños*/
 window._skel_config = {
     prefix: 'css/style',
     preloadStyleSheets: true,
@@ -13,6 +20,11 @@ window._skel_config = {
 	}
 };
 
+/*
+ * Crea los paneles laterales y panel inferior
+ * @type type
+ * Overlay se refiere a los paneles deslizantes, panels se refiere al panel en si
+ */
 window._skel_panels_config = {
     panels: {
         leftPanel: {

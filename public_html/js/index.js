@@ -50,10 +50,6 @@ function ViewModelIndex() {
             });
         }
     });
-
-
-
-
 }// Activamos knockout.js
 ko.applyBindings(new ViewModelIndex());
 

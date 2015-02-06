@@ -1,18 +1,50 @@
+/* 
+    Document   : style-mobile
+    Created on : 04/08/2014, 09:37:00 AM
+    Author     : Adriana Romero
+    Description:
+        Hoja de estilo formato 
+        pantallas 1680x1050 px, orientacion: portrait and landscape
+*/
 
+
+/************************************************************************************
+Cabeceta
+*************************************************************************************/
 
 /* Header */
-
 #header {
     padding-top: 20px;
     padding-left: 120px;
     height: 100px;
     color: #fff;
     margin-left:0px;
-    margin-right: 0px;
-       
+    margin-right: 0px;     
 }
 
-/* Nav */
+/* Title: se muestra para los dispositivos diferentes de smarthphones */
+
+#title {
+    padding-left: 20px;
+    padding-top: 5px;
+    margin: 0 0 1.5em 0;        
+    color: #fff;
+
+}
+/************************************************************************************
+Pie de pagina
+*************************************************************************************/
+
+/* Footer */
+
+#footer {
+    margin: 3em 0 3em 0;
+}
+
+/************************************************************************************
+Paneles
+*************************************************************************************/
+/* Nav: posicion de botones de navegacion */
 
 #nav {
     position: relative;
@@ -23,62 +55,21 @@
     margin: 0 1em 0 1em;
 }
 
-
+/* Propiedad para panel derecho */
 #rightPanel {
 
     background: #f6f6f6;
 }
 
-.listviewSector{
-    margin-top: 40px;
-    margin-left: 15px;
-    width: 97%;
-}
-
-.tabs{
-    margin-top: 10px;
-     margin-left: 15px;
-      width: 97%;
-}
-
-/* Footer */
-
-#footer {
-    margin: 3em 0 3em 0;
-}
-
-
-
-
-#miMapa{
-    width: 65%; 
-    margin-left: 160px !important;
-    height:350px; 
-    margin-top: 50px !important;;
-}
-
-
-
-
-.infoTerritorial{
-    font-size: 15px;
-}
-
-
-.infoTerritorial img{
-    width: 100%;
-    height: 4px;
-}
-
-#container1{
-    margin-bottom: 100px;
-}
+/*Propiedades para tablas ubicadas en el panel derecho*/
 
 #rightPanel table{
 
     border-collapse: separate;
     border-spacing: 20px;
 }
+/*Propiedades para los combos ubicados en el panel derecho*/
+
 #rightPanel select{
 
     font-size: 15px;
@@ -90,7 +81,7 @@
     background: #f6f6f6;
     margin-top: 30px;
 }
-
+/* Propiedad para panel izquierdo */
 #leftPanelButton .toggle {
     text-align: left;
     padding-left: 23px;
@@ -99,49 +90,84 @@
     background-position: 10px;
 
 }
-
+/* Propiedad para panel derecho */
 #rightPanelButton .toggle {
 
     height: 100px;
 
 }
-
+/*Icono de compartir*/
 .icon-myshare{
     background:rgba(0,28,54,0.2) url(images/icon-share.png) no-repeat !important;
     background-position: 40px !important;
 
 }
-
+/*Icono de busqueda*/
 .icon-mysearch{
     background:rgba(0,28,54,0.2) url(images/icon-search.png) no-repeat  !important;
     background-position: 40px !important;
 }
 
+/**********************************************************/
+/*Estilo para las listas                                  */
+/**********************************************************/
+
+/*Listas en sectores*/
+/*Este es el UL*/
+.listviewSector{
+    margin-top: 40px;
+    margin-left: 15px;
+    width: 97%;
+}
+
+
+/************************************************************************************
+Otros componentes
+*************************************************************************************/
+/* Imagen de "cargando"*/
 .loadingPag{
 
     top:70px;
     left: 500px;
 }
 
-#mapaSitio{
+/*Menu TAB: pestañas en el grafico del indicador (Grafico, Datos, Ficha)*/
 
-
-    background: transparent;
-    color: #fff
-
+.tabs{
+    margin-top: 10px;
+     margin-left: 15px;
+      width: 97%;
 }
 
+/*Div que contiene el mapa en las consultas territoriales*/
+
+#miMapa{
+    width: 65%; 
+    margin-left: 160px !important;
+    height:350px; 
+    margin-top: 50px !important;;
+}
+/*Propiedades para las consultas territoriales*/
+
+.infoTerritorial{
+    font-size: 15px;
+}
+/* Divs que contienen las graficas mostradas en la consulta territorial*/
+
+#container1{
+    margin-bottom: 100px;
+}
+
+/*Muestra el nombre del sector donde se encuentra el indicador seleccionado*/
+
+#mapaSitio{
+    background: transparent;
+    color: #fff
+}
+/*Oculta el boton de whatsapp para tabletas*/
 #btnWhatsApp{
     display: none !important;
 }
 
-/* Title */
 
-#title {
-    padding-left: 20px;
-    padding-top: 5px;
-    margin: 0 0 1.5em 0;        
-    color: #fff;
-
-}
 

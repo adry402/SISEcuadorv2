@@ -1,6 +1,7 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Javascript compartir
+ * Vista del index
+ * autor: @Adriana.Romero
  */
 $(document).ready(function() {
   

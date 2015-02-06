@@ -16,23 +16,7 @@
         <link rel="stylesheet" href="css/cabeceras/cabeceraTt.css">
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/jquery-ui/jquery-ui-1.10.4.custom.css">
-        <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/tablas.css" title="widescreen" />
-        <script>
-            $(function() {
-                var icons = {
-                    header: "ui-icon-mail-closed",
-                    headerSelected: "ui-icon-mail-open"
-                };
 
-                $("#accordion").accordion({
-                    heightStyle: "content",
-                    header: "h3",
-                    icons: icons
-                });
-
-            });
-
-        </script>
 
     </head>
     <body onLoad="init();">
@@ -49,11 +33,7 @@
                 <!-- Barra izquierda -->
                 <section class="3u" id="left-sidebar">
                     <nav id="nav">
-                        <a  href="index.html" >Inicio</a>
-                        <a  href="sector.html?1" >Indicadores sociales</a>
-                        <a  href="cnsT1.html" >Indicadores territoriales</a>
-                        <a  href="relvSector.html?2" >Indicadores relevantes</a>
-                        <a  href="agnSse.html?4" >Agenda social</a>
+
                     </nav>
                 </section>
                 <!-- Contenido -->
@@ -91,250 +71,60 @@
 
                     <br>
                     <div class="infoTerritorial">
+                        <div id="datos">
 
-                        <div id="accordion">
-                            <h3>Información general</h3>
-
-                            <div>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th><div class="provincia"></div></th>
-                                    <th><div class="canton"></div></th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <tr>
-                                            <td>Población total</td>
-                                            <td style=" text-align: right"><div id="per_Prv"></div></td>
-                                            <td style=" text-align: right"><div id="per_Ciu"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Población urbana</td>
-                                            <td style=" text-align: right"><div id="pobU_Prv"></div></td>
-                                            <td style=" text-align: right"><div id="pobU_Ciu"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Población rural</td>
-                                            <td style=" text-align: right"><div id="pobR_Prv"></div></td>
-                                            <td style=" text-align: right"><div id="pobR_Ciu"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Superficie (Km2)</td>
-                                            <td style=" text-align: right" id="super_Prv"></td>
-                                            <td style=" text-align: right" id="super_Ciu"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td style=" text-align: left">Densidad poblacional (hab/km2)</td>
-                                            <td style=" text-align: right" id="den_Prv"></td>
-                                            <td style=" text-align: right" id="den_Ciu"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br>
-                                <div id="container">
-                                </div>
-                                <br>
-                            </div>
-                            <h3>Distribución geográfica (distritos por cantones)</h3>
-                            <div>
-                                <ul id="listviewSistema" >
-
-                                </ul>
-                            </div>
-                            <h3>Distribución poblacional (parroquias por cantón)</h3>
-                            <div>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th >Parroquia</th>
-                                            <th>Población</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody data-bind="foreach: parr">
-                                        <tr>
-                                            <td data-bind="text: nombreParr"></td>
-                                            <td style=" text-align: right" data-bind="text: valorParr"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br>
-                            </div>
-                            <h3>Población por ciclo de vida</h3>
-                            <div>
-                                <table id="inf_ciclo">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th><div class="provincia"></div></th>
-                                    <th><div class="canton"></div></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Niños/as de 0 a 2 años</td>
-                                            <td style=" text-align: right"><div id="prv_per02"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_per02"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Niños/as de 3 a 5 años</td>
-                                            <td style=" text-align: right"><div id="prv_per35"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_per35"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Personas de 6 a 17 años</td>
-                                            <td style=" text-align: right"><div id="prv_per617"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_per617"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Personas de 18 a 29 años</td>
-                                            <td style=" text-align: right"><div id="prv_per1829"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_per1829"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Personas de 30 a 64 años</td>
-                                            <td style=" text-align: right" id="prv_per3064"></td>
-                                            <td style=" text-align: right" id="ciu_per3064"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Personas de 65 años y más</td>
-                                            <td style=" text-align: right" id="prv_per65"></td>
-                                            <td style=" text-align: right" id="ciu_per65"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br>
-                            </div>
-                            <h3>Indicadores generales</h3>
-                            <div>
-                                <table id="ind_general">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th colspan="2"><div class="provincia"></div></th>
-                                    <th colspan="2"><div class="canton"></div></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Número de personas en pobreza por NBI</td>
-                                            <td style=" text-align: right"><div id="prv_perpobreza"></div></td>
-                                            <td style=" text-align: right"><div id="prvpor_perpobreza"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_perpobreza"></div></td>
-                                            <td style=" text-align: right"><div id="ciupor_perpobreza"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Número de hogares en hacinamiento</td>
-                                            <td style=" text-align: right"><div id="prv_hacinaHogares"></div></td>
-                                            <td style=" text-align: right"><div id="prvpor_hacinaHogares"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_hacinaHogares"></div></td>
-                                            <td style=" text-align: right"><div id="ciupor_hacinaHogares"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Personas analfabetas de 15 años y más</td>
-                                            <td style=" text-align: right"><div id="prv_analfa15"></div></td>
-                                            <td style=" text-align: right"><div id="prvpor_analfa15"></div></td>
-                                            <td style=" text-align: right"><div id="ciu_analfa15"></div></td>
-                                            <td style=" text-align: right"><div id="ciupor_analfa15"></div></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>Promedio de escolaridad (Personas de 24 años o más)</td>
-                                            <td style=" text-align: right"><div id="prv_escola24"></div></td>
-                                            <td> </td>
-                                            <td style=" text-align: right"><div id="ciu_escola24"></div></td>
-                                            <td> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br>
-                                <div id="container1">
-                                </div>
-                                <br>
-                            </div>
-                            <h3>Infraestructura cantón <span class="canton"></span></h3>
-                            <div>
-                                <table>
-                                    <thead>
-                                        <tr> 
-                                            <td rowspan="2"><p>Ministerios</p></td>
-                                            <td colspan="2">Infraestructura actual</td>
-                                        </tr>
-                                        <tr> 
-                                            <td>Tipo</td>
-                                            <td>Unidades</td>
-                                        </tr>
-                                    </thead>
-
-
-                                    <tbody>
-                                        <tr> 
-                                            <td rowspan="2">MSP</td>
-                                            <td>Centro de salud</td>
-                                            <td style=" text-align: right" id="centro_salud"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td>Hospitales generales</td>
-                                            <td style=" text-align: right" id="hos_general"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td rowspan="2">MINDEP</td>
-                                            <td>Canchas</td>
-                                            <td style=" text-align: right" id="canchas"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td>Coliseos</td>
-                                            <td style=" text-align: right" id="coliseo"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td rowspan="2">MINEDUC</td>
-                                            <td>Fiscal</td>
-                                            <td style=" text-align: right" id="fiscal"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td>Particular</td>
-                                            <td style=" text-align: right" id="particular"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td rowspan="2">MININTERIOR</td>
-                                            <td>U.V.C.</td>
-                                            <td style=" text-align: right" id="uvc"></td>
-                                        </tr>
-                                        <tr> 
-                                            <td>U.P.C.</td>
-                                            <td style=" text-align: right" id="upc"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <br>
-                            </div>
                         </div>
+
+                        <div id="infraestructura">Infraestructura
+                            <table>
+                                 <thead>
+                                <tr> 
+                                    <td rowspan="2"><p>Ministerios</p></td>
+                                    <td colspan="2">Infraestructura actual</td>
+                                </tr>
+                                <tr> 
+                                    <td>Tipo</td>
+                                    <td>Unidades</td>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        
+                        
+                        </div>
+
+
+
+
+
+
                         <script src="js/highcharts/highcharts.js"></script>
-                        <script src="js/localiza/localizacion.js"></script>
+
+                        <script src="js/territoriales/localizacion.js"></script>
+
+                        <script src="js/navegadorPI.js"></script>
+
 
                     </div>
                     <br>
                     <br>
-                      <br>
+                    <br>
 
 
                 </section>
                 <!-- Barra derecha -->
                 <section class="3u" id="right-sidebar">
                     <div>
-                        <select id="region"  data-bind="options: regiones, value: regionSeleccionada, optionsText : 'nombreReg', optionsValue : 'serialReg', optionsCaption : 'Región'"></select><br/>
                         <select id="provinciaCombo"  data-bind="options: provincias, value: provinciaSeleccionada, optionsText : 'nombrePrv', optionsValue : 'serialPrv', optionsCaption : 'Provincia'"></select><br/>
                         <select id="cantonCombo" data-bind="options: cantones, value: cantonSeleccionado, optionsText : 'nombreCiu', optionsValue : 'serialCiu', optionsCaption : 'Cantón'"></select><br/>
                         <select id="parroquiaCombo" data-bind="options: parroquias, value: parrSeleccionada, optionsText : 'nombrePar', optionsValue : 'serialPar', optionsCaption : 'Parroquia'"></select><br/>

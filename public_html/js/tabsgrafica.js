@@ -1,6 +1,7 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Javascript tabs
+ * Vista del Tabs en grafica
+ * autor: @Adriana.Romero
  */
 
 jQuery(document).ready(function() {

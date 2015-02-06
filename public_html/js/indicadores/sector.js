@@ -1,25 +1,21 @@
 /* 
- * Javascript indicadores
+ * Javascript sector
  * autor: @Adriana.Romero
  * 
  */
 
-function ViewModelIndicador() {
+function ViewModelSector() {
     var principal = this;
-
     /*
      * Variables globales y de knockout.js
      * Se recupera las variables responsive
-     * @id_tema
-     * @id_subtema
+     * @tema
      */
 
-     if (location.search.substr(1)) {
-        Variable = location.search.substr(1);
-        var elem = Variable.split('&');
-        id_tema = elem[0];
-        id_subtema = elem[1];
+    if (location.search.substr(1)) {
+        tema = location.search.substr(1);
     }
+
     /*
      * Variables globales y de knockout.js
      */
@@ -30,31 +26,38 @@ function ViewModelIndicador() {
      * Visibilidad de los elementos html
      */
     $(".loadingPag").css("display", "block");
+    $("#errorLabel").css("display", "none");
 
     /*
-     *Evento ajax para listar los sectores
+     *Evento ajax para listar sectores
      */
     $.ajax({
         url: "cadena.txt",
         dataType: "text",
         success: function(data) {
             ipserver = data;
-
-            var cadena = ipserver + "/SWSISEcuador/webresources/indanalisis/indicador/" + id_tema + "/" + id_subtema;
-
+            http://201.219.3.75:8080/SWSISEcuador/webresources/ritema/temas/4
+            var cadena = ipserver + "/SWSISEcuador/webresources/ritema/temas/" + tema;
             $.getJSON(cadena, function(result) {
                 $(".loadingPag").css("display", "none");
-                $(".mapaSitio").html(result[0].str_nombre_tema);
+
                 $.each(result, function() {
                     principal.ejemploLista.push({
-                        url: ko.observable(this.str_pantalla +"?"+this.id_ib + "&" + this.id_tema+"&"+this.ri_id_tema),
+                        url: ko.observable(this.strPantalla + "?" + this.riIdTema.idTema + "&0" + "&" + this.idTema),
                         details: ko.observable(""),
-                        nombreIndicador: ko.observable(this.str_nombre_ia)
+                        nombreGrupo: ko.observable(this.strNombreTema)
                     });
                 });
+            }).error(function(jqXHR, textStatus, errorThrown) { /* assign handler */
+                /* alert(jqXHR.responseText) */
+//                alert("Ocurrio un error" + jqXHR.responseText);
+                $(".loadingPag").css("display", "none");
+                $("#errorLabel").css("display", "block");
             });
         }
     });
+
+  
 
     /*
      * Variables para buscador
@@ -77,10 +80,10 @@ function ViewModelIndicador() {
         success: function(data) {
             ipserver = data;
 //            http://201.219.3.75:8080/SWSISEcuador/webresources/indanalisis/buscar/4
-            var cadena = ipserver + "/SWSISEcuador/webresources/indanalisis/buscar/" + id_tema;
+            var cadena = ipserver + "/SWSISEcuador/webresources/indanalisis/buscar/" + tema;
 
             $.getJSON(cadena, function(result) {
-  var url = result[0].str_pantalla;
+                var url = result[0].str_pantalla;
                 $("#firstName").css("display", "block");
 
 
@@ -110,12 +113,15 @@ function ViewModelIndicador() {
                     select: function(event, ui) {
                         var id_ib = ui.item.id_ib;
                         var id_tema = ui.item.id_tema;
-                      location.href = url+"?" + id_ib + "&" + id_tema ;
+                        location.href = url + "?" + id_ib + "&" + id_tema;
                     }
                 });
             });
         }
     });
+
 }
-//
-ko.applyBindings(new ViewModelIndicador());
+
+// Activamos knockout.js
+ko.applyBindings(new ViewModelSector());
+

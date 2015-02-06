@@ -1,8 +1,13 @@
-
 /* 
-    Created on : 23/01/2014, 04:18:28 PM
-    Author     : ADRIANA.ROMERO
+    Document   : style-mobile
+    Created on : 04/08/2014, 09:37:00 AM
+    Author     : Adriana Romero
+    Description:
+        Hoja de estilo formato 
+        Pantallas de 768x1024 px, orientacion: portrait and landscape
 */
+
+/*Estilo de letras Helvetica*/
 
 @font-face {
     font-family: 'hmedium';
@@ -15,8 +20,6 @@
     font-style: normal;
 
 }
-
-
 
 
 @font-face {
@@ -100,8 +103,10 @@
         url('../font/helveticaneuebd-webfont.svg#helveticaneuebold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+/************************************************************************************
+Inicializacion de los componentes
+*************************************************************************************/
 
 
 body, input, select, textarea {
@@ -115,9 +120,15 @@ body {
     line-height: 2em;
 }
 
+
+/************************************************************************************
+Cabeceta
+*************************************************************************************/
+/* Barra del titulo principal, aqui se muestra el nombre del sistema: Indicadores Sociales, Indicadores Relevantes, etc*/
+
 #titleBar {
     font-family: hbold;
-    background: rgba(0,28,54,0.9)!important;
+ 
     font-size: 16px;
 }
 
@@ -126,11 +137,17 @@ body {
 #header{
     font-family: hbold;
 
-    background: rgba(0,28,54,0.9)!important; 
+
 }
 
 
-/* Footer */
+/************************************************************************************
+Pie de pagina
+*************************************************************************************/
+
+
+/* Footer: Formato del pie de página */
+
 
 #footer {
     color: #62696c;
@@ -139,7 +156,12 @@ body {
     line-height: 10px;
 }
 
-/* Overlays */
+
+/************************************************************************************
+Paneles
+*************************************************************************************/
+
+/* Overlays: panel inferior*/
 
 #contactBar {
 
@@ -147,8 +169,9 @@ body {
     text-align: center;
     line-height: 60px;
     font-size: 1.25em;
-
 }
+
+/*Botones en panel inferior*/
 
 #contactBar a {
     display: inline-block;
@@ -157,40 +180,18 @@ body {
 
 }
 
-/* Panels */
+/* Panels: formatos generales para los paneles */
 
 #leftPanel,
 #rightPanel,
 #bottomPanel {
-
     padding: 1.25em;
 }
-
+/* Propiedad para panel inferior */
 #bottomPanel {
     background: #f6f6f6;
 }
-.compartirT{
-
-    background: url(images/icon-share.png) no-repeat;
-    width: 30px;
-    height: 30px;
-}
-
-#leftPanel a
-{
-    display: block;
-    color: #000;
-    border-bottom: solid 1px #BFBFBF;
-    line-height: 4em;
-
-}
-#rightPanel a {
-    display: block;
-    color: #000;
-    border-bottom: none;
-    line-height: 4em;
-}
-
+/* Propiedad para panel inferior: etiqueta <a> */
 #bottomPanel a {
     display: block;
     color: #000;
@@ -201,20 +202,46 @@ body {
     font-weight: bold;
     text-decoration: none
 }
+
+/* Propiedad para panel inferior: etiqueta <a><span> */
 #bottomPanel a span{
     padding-left: 40px;
 }
+/* Propiedad para panel izquierdo: etiqueta <a> */
+#leftPanel a
+{
+    display: block;
+    color: #000;
+    border-bottom: solid 1px #BFBFBF;
+    line-height: 4em;
+
+}
+
+/* Propiedad para panel derecho: etiqueta <a> */
+#rightPanel a {
+    display: block;
+    color: #000;
+    border-bottom: none;
+    line-height: 4em;
+}
+
+/* Propiedad para paneles: listas */
 
 
 #leftPanel li:first-child > a,
 #rightPanel li:first-child > a {
     border-top: 0;
 }
-
+/* Nav: posicion de botones de navegacion */
 #nav a {
     color: #000;
     text-decoration: none;
 }
+
+/**********************************************************/
+/*Estilo para el menu compartir                            */
+/**********************************************************/
+
 
 #share a {
     padding-bottom: 10px;
@@ -249,8 +276,6 @@ body {
 {
     text-decoration: none;
 }
-
-
 
 #shareMail {
     padding-top: 17px;
@@ -294,6 +319,63 @@ body {
     border-bottom: solid 1px #BFBFBF; 
 }
 
+.compartirT{
+
+    background: url(images/icon-share.png) no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.email{
+    background:transparent  url(images/icon-msg.png) no-repeat left !important;
+
+
+}
+
+
+.facebook{
+    background:transparent url(images/icon-facebook.png) no-repeat left !important;
+
+}
+
+.facebook:hover{     
+    background:#e3e3e3 url(images/icon-facebook.png) no-repeat left !important;
+
+}
+
+
+.twitter{
+    background:transparent url(images/icon-twitter.png) no-repeat left !important;
+
+}
+
+.twitter:hover{
+    background:#e3e3e3 url(images/icon-twitter.png) no-repeat left !important;
+
+}
+
+.google{
+    background:transparent url(images/icon-google.png) no-repeat left !important;
+
+}
+
+.google:hover{
+    background:#e3e3e3 url(images/icon-google.png) no-repeat left !important;
+
+}
+
+.whatsapp{
+    background:transparent url(images/icon-whats.png) no-repeat left !important;
+
+}
+
+
+
+
+#labelShare{
+    font-family: hbold;
+
+}
 
 
 /**********************************************************/
@@ -344,14 +426,20 @@ body {
     text-align: justify;
 
 }
+/************************************************************************************
+Otros componentes
+*************************************************************************************/
+
+/* Imagen de "cargando"*/
 
 .loadingPag{
     background: url('images/ajax-loader.gif');
     position: relative;
     width:145px;
     height:145px;
-
 }
+
+/*Ubicacion del texto "Espere un momento"*/
 .absoluta {
     position: absolute ;
     top:150px;
@@ -366,60 +454,25 @@ body {
 /*Estilo para la tabla de datos
 ********************************/
 
-.pg-normal {
-    font-family: hlight;
-    color: black;
-    font-weight: normal;
-    text-decoration: none;    
-    background: transparent;
-    font-size: 15px;
-    width: 29px;
-    height: 29px;
-    border: none;
-}
-.pg-selected {
-    font-family: hbold;
-    color: #fff;
-    font-weight: bolder;        
-    border: none;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    background: transparent;
-    text-decoration: underline;
-
-}
-
-
-
-#pageNavPosition{
-
-    padding:10px 3px 5px 3px;
-    background:url(images/encabezado.png);
-    font-family: hlight;
-    text-align: center;
-}
-
 #results{
 
     font-family: hlight;
     font-size: 13px;
     line-height:25px;
-    width: 100%
+    width: 100%;
+     
 }
-
-
 
 #results tr:first-child td:last-child {
     border-radius:0px 5px 0px 0px;
 }
 
 #results thead tr{
-    font-family: hbold;
-    color:#000;
-    background-color: #A6A5A5 !important;
-    border-bottom:1px #444 solid;
-    font-size: 14px;
+    font-family: hlight;
+      color: #fff;
+    background-color: #9A9A9A !important;
+  
+    font-size: 15px;
     text-align: center;
 }
 #results tr:nth-child(2n) {
@@ -437,6 +490,7 @@ body {
     width: 4%;
     text-align: center
 }
+/*Menu TAB: pestañas en el grafico del indicador (Grafico, Datos, Ficha)*/
 
 
 /*----- Tabs -----*/
@@ -453,14 +507,14 @@ body {
     clear:both;
     content:'';
 }
-
+/* Clearfix */
 .tab-links li {
     margin:0px 0px;
     float:left;
     list-style:none;
     border-right: 1px solid #b0b0b0
 }
-
+/* Clearfix */
 .tab-links a {
     padding:6px 26px;
     display:inline-block;
@@ -471,7 +525,7 @@ body {
     text-decoration: none;
     transition:all linear 0.15s;
 }
-
+/* Clearfix */
 .tab-links a:hover {
 
     text-decoration:none;
@@ -500,8 +554,6 @@ li.active a, li.active a:hover {
 .tab {
     display:none;
 }
-
-
 
 
 .tab.active {
@@ -599,56 +651,6 @@ li.active a, li.active a:hover {
     padding-left: 15px
 }
 
-.email{
-    background:transparent  url(images/icon-msg.png) no-repeat left !important;
-
-
-}
-
-
-.facebook{
-    background:transparent url(images/icon-facebook.png) no-repeat left !important;
-
-}
-
-.facebook:hover{     
-    background:#e3e3e3 url(images/icon-facebook.png) no-repeat left !important;
-
-}
-
-
-.twitter{
-    background:transparent url(images/icon-twitter.png) no-repeat left !important;
-
-}
-
-.twitter:hover{
-    background:#e3e3e3 url(images/icon-twitter.png) no-repeat left !important;
-
-}
-
-.google{
-    background:transparent url(images/icon-google.png) no-repeat left !important;
-
-}
-
-.google:hover{
-    background:#e3e3e3 url(images/icon-google.png) no-repeat left !important;
-
-}
-
-.whatsapp{
-    background:transparent url(images/icon-whats.png) no-repeat left !important;
-
-}
-
-
-
-
-#labelShare{
-    font-family: hbold;
-
-}
 
 #miMapa{
     background: #f6f6f6;
@@ -716,28 +718,32 @@ li.active a, li.active a:hover {
     font-weight: bold;
 }
 
-/*.tituloTablas{
+.tituloTablas{
 
     font-size: 17px;
     font-family: hlight;
     text-align: left;
     font-weight: bold;
-}*/
+}
 
 .infoTerritorial table {
     width: 100%;
 }
 
 .infoTerritorial table thead tr{
-    font-size: 14px;
-    color:#000;
+    font-size: 15px;
+    color:#fff;
     background-color:  #A6A5A5 !important;
     border-bottom:1px #494949 solid;
     text-align: center;
     
 }
 
-
+.infoTerritorial table td{
+    
+    text-align: right;
+    
+}
 
 
 
@@ -754,60 +760,4 @@ li.active a, li.active a:hover {
 
 }
 
-/*Acordion*/
-.ui-accordion{
-    width: 100%;
-   
-}
-
-.ui-accordion .ui-accordion-header
-{
-    font-size: 14px;
-    text-align: left;
-    padding-left: 15px !important;
-    padding-right: 40px !important;    
-    border-bottom: grey 1px solid;
-    color:#000;
-   
-}
-
-.ui-accordion .ui-accordion-header:hover
-{
-    cursor: pointer;
-}
-
-.ui-accordion .ui-accordion-header-active {
-    background: #122D44 !important;
-        color:#fff;
-}
-.ui-accordion-header-icon .ui-icon .ui-icon-circle-minus{
-    background: red
-}
-
-/*Formato contenido*/
-.ui-accordion .ui-accordion-content
-{
-    border: #EEEEEE 1px solid;
-    padding: 0 !important;
-    
-
-}
-
-.ui-accordion .ui-accordion-header .ui-accordion-header-icon{
-   
-    
-     left: 90% !important;
-     
-}
-.ui-icon-mail-closed{
-background:url('images/flecha_izquierda.png') no-repeat right;
-width:5px;
-    height:8px;
-}
-
-.ui-icon-mail-open{
-    background:url('images/flecha_abajo.png') no-repeat right;
-width:8px;
-    height:5px;
-}
 

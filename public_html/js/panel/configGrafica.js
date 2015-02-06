@@ -1,4 +1,9 @@
-
+/* 
+ * Javascript confGrafica
+ * autor: @Adriana.Romero
+ * Presenta los graficos 
+ * Puglin libreria skel,js
+ */
 window._skel_config = {
     prefix: 'css/style',
     preloadStyleSheets: true,
@@ -13,6 +18,10 @@ window._skel_config = {
 	}
 };
 
+/*
+ * Crea los paneles laterales y panel inferior
+ * @type type
+ */
 window._skel_panels_config = {
     panels: {
         leftPanel: {

@@ -1,3 +1,14 @@
+/* 
+    Document   : style-mobile
+    Created on : 04/08/2014, 09:37:00 AM
+    Author     : Adriana Romero
+    Description:
+        Hoja de estilo formato Pantallas de 480x320 px, orientacion: portrait and landscape
+*/
+
+/************************************************************************************
+Inicializacion de los componentes
+*************************************************************************************/
 body{
     font-size: 12.5pt;
     line-height: 1.5em;
@@ -12,7 +23,9 @@ body{
 }
 
 
-/* Header */
+/************************************************************************************
+Cabeceta
+*************************************************************************************/
 
 #header {
     margin-top: 4.5em;
@@ -21,61 +34,14 @@ body{
 
 
 
-/* Title */
+/* Title: este componente se oculta para smartphones */
 
 #title {
     display: none;
 }
 
-
-/* Nav */
-
-#nav a {
-    margin: 0 0.5em 0 0.5em;
-}
-
-
-
-
-/* Footer */
-
-#footer {
-    margin-bottom: 3em;
-}
-
-#leftPanel,
-#rightPanel {
-
-    background: #f6f6f6;
-}
-
-/* Overlays */
-
-#leftPanelButton .toggle,
-#rightPanelButton .toggle {
-    display: block;
-    background: none;
-    height: 50px;
-    line-height: 44px;
-
-}
-
-#leftPanelButton .toggle {
-    text-align: left;
-    background: url('images/menu.png') no-repeat ;
-    background-position: 0px;
-    margin-top: 5px
-}
-
-#rightPanelButton .toggle {
-    text-align: right;
-     margin-top: 5px
-}
-
-
-
+/* Barra del titulo principal, aqui se muestra el nombre del sistema: Indicadores Sociales, Indicadores Relevantes, etc*/
 #titleBar {
-
     padding-top: 10px;
     font-size: 13px;
     margin: 0px auto;
@@ -84,15 +50,89 @@ body{
 }
 
 
+/************************************************************************************
+Pie de pagina
+*************************************************************************************/
+
+
+/* Footer: Formato del pie de página */
+
+#footer {
+    margin-bottom: 3em;
+}
+
+/************************************************************************************
+Paneles
+*************************************************************************************/
+
+/* Nav: margenes para los menus de navegacion */
+
 #nav a {
     margin: 0 0.5em 0 0.5em;
 }
 
-.loadingPag{
+/* Paneles: Formato paneles izquierdo y derecho, propiedades en común */
+#leftPanel,
+#rightPanel {
 
+    background: #f6f6f6;
+}
+
+
+/* Overlays: botones que al pulsarlos desplazan los paneles (class .toggle) propiedades comunes */
+
+#leftPanelButton .toggle,
+#rightPanelButton .toggle {
+    display: block;
+    background: none;
+    height: 50px;
+    line-height: 44px;
+}
+
+/* Propiedad para panel izquierdo */
+#leftPanelButton .toggle {
+    text-align: left;
+    background: url('images/menu.png') no-repeat ;
+    background-position: 0px;
+    margin-top: 5px
+}
+
+/* Propiedad para panel derecho */
+#rightPanelButton .toggle {
+    text-align: right;
+     margin-top: 5px
+}
+/*Propiedades para tablas ubicadas en el panel derecho*/
+#rightPanel table{
+
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+/*Propiedades para los combos ubicados en el panel derecho*/
+#rightPanel select{
+
+    font-size: 15px;
+    width: 200px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    height: 50px;
+    background: #f6f6f6;
+}
+
+/************************************************************************************
+Otros componentes
+*************************************************************************************/
+
+
+/* Imagen de "cargando"*/
+.loadingPag{
     top:10px;
     left: 65px;
 }
+
+/* Divs que contienen las graficas mostradas en la consulta territorial*/
 #container{
     height: 340px
 }
@@ -100,18 +140,21 @@ body{
     height: 340px;
     width: 85% !important;
 }
+
+/*Muestra el nombre del sector donde se encuentra el indicador seleccionado*/
 .mapaSitio{
         font-size: 11px;
         color:#fff;
         width: 82%;
     }
 
-
+/*Div que contiene el mapa en las consultas territoriales*/
 #miMapa{
     width: 100%; 
     height:200px; 
 }
 
+/*Propiedad responsiva para la ubicacion del mapa y del logo de "cargando"*/
 @media  screen and (min-width : 321px) {
     .loadingPag{
 
@@ -125,47 +168,28 @@ body{
 }
 
 
-#rightPanel table{
-
-    border-collapse: separate;
-    border-spacing: 20px;
-}
-#rightPanel select{
-
-    font-size: 15px;
-    width: 200px;
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    height: 50px;
-    background: #f6f6f6;
-}
 
 
-
+/*Propiedades para las tablas de las consultas territoriales*/
 .infoTerritorial table{
     width: 100%;
     border-collapse: separate;
     border-spacing: 3px;
 }
-
-
-
-.infoTerritorial img{
-    width: 100%;
-    height: 2px;
+.infoUbicacion table {
+    line-height: 0px;
 }
 
+/*Propiedades para el boton de consulta*/
 #bntConsultaT{
 
     margin-left: 120px;
 }
 
+/*Propiedades para el div codigo Distrito en las consultas territoriales*/
 #codigoDistrito{
     font-size: 12px;
     font-family: hbold;
 }
 
-.infoUbicacion table {
-    line-height: 0px;
-}
+

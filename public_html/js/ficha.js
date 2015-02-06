@@ -1,6 +1,7 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Javascript ficha
+ * autor: @Adriana.Romero
+ * Presenta la ficha metodologica
  */
 
 function ViewModelFicha() {

@@ -1,4 +1,8 @@
-
+/* 
+ * Javascript confTerritorial
+ * autor: @Adriana.Romero
+ * Puglin libreria skel,js
+ */
 window._skel_config = {
     prefix: 'css/style',
     preloadStyleSheets: true,
@@ -12,7 +16,10 @@ window._skel_config = {
         mobile: {range: '-760', containers: 'fluid', lockViewport: true, grid: {collapse: true, gutters: 20}}
     }
 };
-
+/*
+ * Crea los paneles laterales y panel inferior
+ * @type type
+ */
 window._skel_panels_config = {
     panels: {
         leftPanel: {

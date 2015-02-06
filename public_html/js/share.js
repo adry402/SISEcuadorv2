@@ -1,13 +1,19 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Javascript compartir
+ * Vista del index
+ * autor: @Adriana.Romero
+ */
+
+
+/**
+ * 
  */
 $(document).ready(function() {
-    if (location.search.substr(1)) {
+   if (location.search.substr(1)) {
         Variable = location.search.substr(1);
         var elem = Variable.split('&');
-        id_ib = elem[0];
-        id_tema = elem[1];
+        id_tema = elem[0];
+        id_ib = elem[1];
         id_subtema = elem[2];
     }
 
